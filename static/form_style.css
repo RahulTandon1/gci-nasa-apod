@@ -1,0 +1,45 @@
+form  {
+    border-style: solid;
+    box-sizing: border-box;
+    width: 60%;
+    height: auto;
+    position: relative;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%);
+
+    padding-left: 5%;
+    padding-bottom: 5%;
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 1.25em;
+    line-height: 175%;
+}
+
+#formTitle {
+    margin-bottom: 5%;
+}
+#selectivePdfOptions {
+    display: none;
+    position: relative;
+    left: 5%;
+}
+
+form input[type='date' i] {
+    font-size: 1em;
+}
+#submitButton {
+    font-size: 1em;
+    font-weight: bold;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(102, 102, 101);
+    box-sizing: border-box;
+    width: 15%;
+    height: 30%;
+    position: relative;
+        left: 45%;
+        transform: translateX(-50%);
+
+}

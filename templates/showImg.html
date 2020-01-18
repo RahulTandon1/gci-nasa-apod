@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block addStylesheet%} 
+<link rel="stylesheet" href="{{ url_for('static', filename='showImg_style.css')}}" />
+{% endblock%}
+
+{% block mainContent %}
+<div id='apodContainer'>
+    <img id='apodImg' src='{{imgSrc}}'/>
+</div>
+<div id='explanationContainer'>
+    <h2 id='apodTitle'>{{imgTitle}}</h2>
+    <p id='explanation'>{{imgExplanation}}</p>
+</div>
+{% endblock%}

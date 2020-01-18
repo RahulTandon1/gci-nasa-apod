@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content='width=device-width, initial-scale=1.0'>
+    <!-- Linking for the heart icon to work-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Getting the montserrat font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- A makeshit favicon I made -->
+    <link href="{{url_for('static', filename='favicon.ico')}}" rel="shortcut icon" type="image/x-icon" />
+    
+    <!-- Linking basic style sheet-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='base_style.css')}}" />
+
+    <!-- Providing provision to edit the header as needed. 
+    The most common use case would adding a new stylesheet, hence the block's name -->
+    {% block addStylesheet%} {% endblock%}
+  </head>
+  <body>
+    <!-- The banner that will come on top every page -->
+    <header>
+      <h1 id='goBack'><a href='{{url_for("viewForm")}}'>NASA APOD with Flask</a></h1>
+    </header>
+    
+    <!-- Flash message container -->
+    <div id='messageContainer'></div>
+    
+    <!-- Placing script which is used to display errors -->
+    <script src="{{url_for('static', filename='displayErrs.js')}}"></script>
+    
+    <!-- Displaying errors that were 'flashed' using Flask, if any -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages%}
+        {% for message in messages %}
+          <!-- Flash error is a function defined in 'displayErrs'
+          which has been included/linked above -->
+          <script>flashError('{{ message }}')</script>
+        {% endfor%}
+      {% endif %}
+    {% endwith%}
+    
+    <!-- Placeholder for main content that will be filled 
+    in by the template that inherits this base template-->
+    {% block mainContent %} {% endblock %}
+    
+    <!-- The footer -->
+    <footer>
+      Made with <i class="fa fa-heart"></i> by <strong>rt</strong> for <strong>Fedora</strong> during <strong>GCI</strong>.
+    </footer>
+    <!-- Place holder for any scripts the templates which inherit this template
+    might want to use -->
+    {% block addScript %} {% endblock%}
+  </body>
+</html>

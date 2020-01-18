@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+<!-- Linking stylesheet meant for only this page -->
+{% block addStylesheet%}
+<link rel="stylesheet" href="{{ url_for('static', filename='404_style.css')}}" />
+{% endblock%}
+
+{% block mainContent %} 
+<div id='errMsg'>
+    <h1>ERROR 404</h1>
+    {{errorMessage}}
+    <br>
+    Click on the Top Icon / Heading labelled, 'NASA APOD with Flask' to go back to the form screen
+</div>
+{% endblock %}

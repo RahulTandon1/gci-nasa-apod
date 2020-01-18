@@ -1,0 +1,46 @@
+#apodContainer {
+    border-style: groove;
+    border-color: rgb(102, 102, 101);
+    border-width: thick;
+    box-sizing: border-box;
+        width: 60%;
+
+    position: relative;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+}
+
+#apodImg {
+    /*border-style: dashed;*/
+    box-sizing: border-box;
+        width: 100%;
+}
+
+
+#explanationContainer {
+    box-sizing: border-box;
+        width: 70%;
+        height: auto;
+    
+    margin-top: 5%;
+    margin-bottom: 5%;
+    
+    position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+}
+
+#apodTitle {
+    margin-bottom: 5%;
+    margin-top: 2%;
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+}
+
+#explanation {
+    font-size: 1.25em;
+    text-align: center;
+    line-height: 2;
+}

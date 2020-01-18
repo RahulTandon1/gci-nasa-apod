@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+<!-- Linking stylesheet meant for only this page -->
+{% block addStylesheet%}
+<link rel="stylesheet" href="{{ url_for('static', filename='form_style.css')}}" />
+{% endblock%}
+
+<!--Main Content of the page -->
+{% block mainContent %} 
+<form action='/handleForm' method='post'>
+    
+    <!-- Form heading -->
+    <h1 id='formTitle'>Get the Astronomical Picture of the Day!</h1>
+    <!--------- DATE -------->
+    
+    <!-- Date input for which date's APOD image to get -->
+    Date of the image: &nbsp; &nbsp; &nbsp;
+    <!-- Given a default value of today's date by getting today's date using Python -->
+    <input type='date' name='picDate' value='{{defaultDate}}' required />
+    <br>
+    
+    <!-- FORMAT OF APOD Result -->
+    Format:
+    <br>
+    <!-- input tag for which kind of output (webpage or pdf the user wants) -->
+    <input type='radio' name='outputType' value='pdf' onclick='showSelectiveOptions()' required />PDF
+    <br>
+
+    <!-- Conditional input tags -->
+    
+    <!-- Are only shown to user if he/she selects the 'PDF' option above. -->
+    
+    <!--TL;DR > only send the 'pdfType' property to the backend if the user selects the PDF option above, 
+    and we ensure that it's never sent blank (without a value) in this case -->
+    
+    <!-- And because we want this 'pdfType' property to be sent to the backen only if the 'PDF' option is set above,
+    we toggle the 'default' selection with JS accordingly.  -->
+    
+    <!-- Why do we have a default selection in the first place? Because ideally the 'Header Footer' thingie 
+    is "required" on selection of the PDF option i.e. shouldn't be returned empty to the user,
+    but I had some trouble toggling that, so I worked around by toggling the selection of the 'default' radio input using JS, 
+    which is with the Header and Footer-->
+
+    
+    <div id='selectivePdfOptions'>
+        <input type='radio' name='pdfType' value='yesBanner'/>With Header and Footer (default)
+        <br>
+        <input type='radio' name='pdfType' value='noBanner' />Without Header and Footer
+    </div>
+    
+    <!-- input tag for which kind of output (webpage or pdf the user wants) -->
+    <input type='radio' name='outputType' value='webpage' onclick='hideSelectiveOptions()' required />Webpage
+    <br>
+    
+    <!-- Final Submit button -->
+    <input id='submitButton' type='submit'/>
+</form>
+
+{% endblock %}
+
+{% block addScript %} 
+<script src="{{url_for('static', filename='form_script.js')}}"></script>
+{% endblock%}

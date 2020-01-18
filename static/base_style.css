@@ -1,0 +1,71 @@
+/*
+About: Styles for the basic elements of every page, 
+that are:
+1. Header - The banner that come on top of every page with
+the text 'NASA APOD with Flask'
+
+2. Footer - the tag containig the text 'Made with <3 by....'
+2.1 .fa-heart - the heart that comes in the footer text.
+
+3. Flash - the style of the standard flash message that will 
+pop up in case of errors.
+
+*/
+
+
+/* Fixing the font for the page. */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Header is the banner that says 'NASA APOD with Flasj'
+that come on the top of every page */
+header {
+    background-color: rgb(152, 206, 250);
+    
+    box-sizing: border-box;
+    
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+
+}
+
+/* Footer is the tag that contains the 
+'Made with .....' text */
+footer {
+    position: relative;
+        top: 20%;
+        left: 5%;
+}
+
+/* The heart icon that comes in the footer */
+.fa-heart {
+    color: red;
+}
+
+/* Style for the Flash messages which are shown 
+in case of errors. */
+
+.messageFlash {
+    box-sizing: border-box;
+        width: 70%;
+
+    border-radius: 5px;
+
+    margin-top: 0.25%;
+    margin-bottom: 0.25%;
+
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+
+    background-color: rgba(247, 227, 77, 0.5);
+
+    display: none;
+}
+/* Styles for the back button */
+
+#goBack a, #goBack a:visited {
+    color: black;
+}
